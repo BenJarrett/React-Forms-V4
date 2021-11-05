@@ -10,8 +10,7 @@ function App() {
   return (
     <div className='App'>
       <StudentForm />
-    </div>
-  );
+    </div>);
 }
 
 export default App;

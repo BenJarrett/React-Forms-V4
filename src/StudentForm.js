@@ -1,6 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function StudentForm() {
+  const [student, setStudent] = useState({
+    name: '',
+    teacher: '',
+    grade: '0'
+  });
+
+  const handleInputChange = (e) => {
+    setStudent((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   return (
         <>
         <div className='student-form'>
@@ -10,11 +23,29 @@ export default function StudentForm() {
                 >
                 <h2>New Student</h2>
                 <label>Name: </label>
-                <input></input>
+                <input
+                name='name'
+                type='text'
+                placeholder='Name'
+                value={student.name}
+                onChange={handleInputChange}
+                ></input>
                 <label>Teacher: </label>
-                <input></input>
+                <input
+                name='teacher'
+                type='text'
+                placeholder='Teacher'
+                value={student.teacher}
+                onChange={handleInputChange}>
+                </input>
                 <label>Grade: </label>
-                <input></input>
+                <input
+                name='grade'
+                type='text'
+                placeholder='Grade'
+                value={student.name}
+                onChange={handleInputChange}
+                ></input>
                 <button type='submit'>Submit</button>
           </form>
 
